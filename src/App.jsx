@@ -6,25 +6,9 @@ import { TodoList } from "./components/TodoList/TodoList";
 import InputPrice from "./components/InputPrice/InputPrice";
 
 function App() {
-  // const [todos, setTodos] = useState([
-  //   {
-  //     id: 1,
-  //     title: "Pagar Renta",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Pagar gasolina",
-  //     completed: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Pagar internet",
-  //     completed: false,
-  //   },  
-  // ]);
 
    const [todos, setTodos] = useState([])
+
 
  // get todos from local storage
   useEffect(() => {
@@ -43,13 +27,14 @@ useEffect(() => {
 }, [todos])
 
 
-  const addTodo = (title) => {
+  const addTodo = (title, pr1) => {
     const lastId = todos?.length > 0 ? todos[todos?.length - 1].id : 1;
 
     const newTodo ={
-       id: lastId + 1,
+      id: lastId + 1,
       title,
       completed: false,
+      pr1: "local",
     }
  
     const todoList = [...todos]

@@ -23,7 +23,11 @@ const TodoInput = ({addTodo}) => {
         value={title}
         onChange={e => setTitle(e.target.value)}
         onKeyDown={e => handleAddTodo(e)}/>        
+        <div>
+    
     </div>
+        </div>
+    
   );
 };
 

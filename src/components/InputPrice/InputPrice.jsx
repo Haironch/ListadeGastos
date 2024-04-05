@@ -1,8 +1,24 @@
 export default function InputPrice() {
+
+  function handleSubmit(e) {
+    // Previene que el navegador recargue la página
+    e.preventDefault();
+
+    // Lee los datos del formulario
+    const form = e.target;
+    const formData = new FormData(form);
+    // O puedes trabajar con él como un objecto plano:
+    const formJson = Object.fromEntries(formData.entries());
+    console.log(formJson);
+  }
+
+
+  console.log()
+
     return (
-      <div>
-        <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
-          Prestacion salaraial
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="price" className="block text-sm font-medium leading-6 text-whithe-900">
+          Ingrese su prestacion salarial
         </label>
         <div className="relative mt-2 rounded-md shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -12,24 +28,11 @@ export default function InputPrice() {
             type="text"
             name="price"
             id="price"
-            className="bg-gray-700 block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             placeholder="0.00"
           />
-          <div className="absolute inset-y-0 right-0 flex items-center">
-            <label htmlFor="currency" className="sr-only">
-              Currency
-            </label>
-            <select
-              id="currency"
-              name="currency"
-              className="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-            >
-              <option>GT</option>
-              <option>CAD</option>
-              <option>EUR</option>
-            </select>
-          </div>
+          
         </div>
-      </div>
+        </form>
     )
   }
