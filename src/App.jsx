@@ -27,14 +27,14 @@ useEffect(() => {
 }, [todos])
 
 
-  const addTodo = (title, pr1) => {
+  const addTodo = (title, price) => {
     const lastId = todos?.length > 0 ? todos[todos?.length - 1].id : 1;
 
     const newTodo ={
       id: lastId + 1,
       title,
+      price,
       completed: false,
-      pr1: "local",
     }
  
     const todoList = [...todos]

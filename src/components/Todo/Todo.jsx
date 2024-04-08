@@ -1,6 +1,6 @@
 import { useState } from "react";
 const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
-  const { id, title, completed } = todo;
+  const { id, title, completed, price } = todo;
   return (
     <div className="flex items-center justify-between p-4 bg-gray-700 border-b border-solid border-gray-600 ">
       <div className="flex items-center ">
@@ -12,7 +12,7 @@ const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
         ) : (
           <span onClick={()=>  handleSetCompleted(id)} className={`border border-gray-500 rounded-full p-3 cursor-pointer`}></span>                                      
           )}
-        <p className={"pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title}</p>
+        <p className={"pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title}{price}</p>
       </div>
       <img
         onClick={() => handleDeleteTodo(id)}
