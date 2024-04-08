@@ -12,7 +12,7 @@ const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
         ) : (
           <span onClick={()=>  handleSetCompleted(id)} className={`border border-gray-500 rounded-full p-3 cursor-pointer`}></span>                                      
           )}
-        <p className={"pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title}{price}</p>
+        <p className={"ml-1 pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title} {price}</p>
       </div>
       <img
         onClick={() => handleDeleteTodo(id)}
