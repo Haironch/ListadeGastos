@@ -1,6 +1,7 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
+
 const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
-  const { id, title, completed, price } = todo;
+  const { id, title, completed, price, salary} = todo;
   return (
     <div className="flex items-center justify-between p-4 bg-gray-700 border-b border-solid border-gray-600 ">
       <div className="flex items-center ">
@@ -12,7 +13,7 @@ const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
         ) : (
           <span onClick={()=>  handleSetCompleted(id)} className={`border border-gray-500 rounded-full p-3 cursor-pointer`}></span>                                      
           )}
-        <p className={"ml-1 pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title} {price}</p>
+        <p className={"ml-1 pl-3" + (completed && "text-decoration-line: line-through bg-red-500 rounded")}>{title} {price} {salary}</p>
       </div>
       <img
         onClick={() => handleDeleteTodo(id)}
@@ -24,3 +25,9 @@ const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
   );
 };
 export { Todo };
+
+Todo.propTypes = {
+  todo: PropTypes.object.isRequired,
+  handleSetCompleted: PropTypes.func.isRequired,
+  handleDeleteTodo: PropTypes.func.isRequired,
+}

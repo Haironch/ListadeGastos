@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState} from "react";
+import PropTypes from "prop-types";
 
 const TodoInput = ({ addTodo }) => {
   const [title, setTitle] = useState("");
@@ -26,31 +27,37 @@ const TodoInput = ({ addTodo }) => {
   };
 
   return (
-    <div className="flex">
-      <div>
-        <div className="mt-6 w-96 relative ">
+
+    <div className="block sm:flex sm:w-full sm:px-5 ">
+    <div className="w-full">
+        <div className="
+        mt-6 w-full  relative 
+        sm:w-150px
+        ">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <span className="border border-gray-500 border-solid p-3 rounded-full"></span>
           </div>
           <input
           id="title"
             type="text"
-            className="focus:shadow-lg font-Inter focus:shadow-blue-800 pl-12 w-full py-4 bg-gray-700 rounded-xl outline-none transition-all duration-300 ease-in-out"
+            className="sm:flex-1 sm:w-full sm:flex-grow focus:shadow-lg font-Inter focus:shadow-blue-800 pl-12 w-full py-4 bg-gray-700 rounded-xl outline-none transition-all duration-300 ease-in-out"
             placeholder="cual es el siguiente"
-            value={title}
+            value={title ? title : ""}
             onChange={(e) => setTitle(e.target.value)}
             onKeyDown={(e) => handleAddTodo(e)}
           />
         </div>
       </div>
 
-      <div className="mt-6 ml-4 relative w-25">
+      <div className="
+      mt-6 relative 
+      sm:ml-4 ">
         <input
           id="priceinput"
           type="text"
-          className="focus:shadow-lg font-Inter focus:shadow-blue-800 pl-3 w-full py-4 bg-gray-700 rounded-xl outline-none transition-all duration-300 ease-in-out"
+          className="w-full focus:shadow-lg font-Inter focus:shadow-blue-800 pl-3 py-4 bg-gray-700 rounded-xl outline-none transition-all duration-300 ease-in-out"
           placeholder="precio"
-          value={price}
+          value={price ? price : ""}
           onChange={(e) => setPrice(e.target.value)}
           onKeyDown={(e) => handleAddTodo(e)}
         />
@@ -60,3 +67,5 @@ const TodoInput = ({ addTodo }) => {
 };
 
 export { TodoInput };
+
+TodoInput.propTypes = { addTodo: PropTypes.func.isRequired}

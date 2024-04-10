@@ -1,5 +1,6 @@
 import { TodoFilters } from "../TodoFilters/TodoFilters";
 import { Todo } from "../Todo/Todo";
+import PropTypes from "prop-types";
 
 const TodoList = ({ todos,  handleSetCompleted, handleDeleteTodo }) => {
   return (
@@ -10,9 +11,14 @@ const TodoList = ({ todos,  handleSetCompleted, handleDeleteTodo }) => {
         handleDeleteTodo={handleDeleteTodo}
         />;
       })}
-
-      <TodoFilters />
+      <TodoFilters/>
     </div>
   );
 };
 export { TodoList };
+
+TodoList.propTypes = {
+  todos: PropTypes.array.isRequired,
+  handleSetCompleted: PropTypes.func.isRequired,
+  handleDeleteTodo: PropTypes.func.isRequired,
+}
