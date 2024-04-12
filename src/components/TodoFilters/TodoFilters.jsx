@@ -7,13 +7,13 @@ const TodoFilters = () => {
   return (
     <FilterContainer>
       <ItemsLeftf />
-      <FilterButtonContainer>
-        <FilterButton action={() => {}} active="All" filter="All" />
-        <FilterButton action={() => {}} active="All" filter="Active" />
-        <FilterButton action={() => {}} active="All" filter="Completed" />
+      <FilterButtonContainer > 
+        <FilterButton action={() => {}} active="All" filter="Todos" />
+        <FilterButton action={() => {}} active="All" filter="Activos" />
+        <FilterButton action={() => {}} active="All" filter="Completados" />
       </FilterButtonContainer>
-      <button className="text-gray-400 hover:text-white cursor-pointer transition-all duration-300 ease-in-out">
-        Clear Completed
+      <button className=" text-lg text-gray-400 hover:text-green-500 cursor-pointer transition-all duration-300 ease-in-out">
+        Limpiar completados
       </button>
     </FilterContainer>
   );
