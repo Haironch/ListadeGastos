@@ -72,6 +72,7 @@ const TodoInput = ({ addTodo }) => {
         <input
           id="priceinput"
           type="text"
+          inputMode="numeric"
           className="sm- w-full focus:shadow-lg font-Inter focus:shadow-blue-800 pl-3 
           py-4 bg-gray-700 rounded-xl outline-none transition-all duration-300 
           ease-in-out"
