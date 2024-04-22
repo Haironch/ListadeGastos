@@ -93,22 +93,24 @@ function App() {
  
 
   return (
-    <div className="bg-gray-900 min-h-screen font-inter h-full text-gray-100 flex items-center justify-center py-20 px-5">
-      <div className="container flex flex-col max-w-xl">
-        <Title />
-        <p>Saldo disponible: {remainingSalary}</p>
-        <h1>Total gastado: {totalPrice}</h1>
-        <InputPrice setSalary={setSalary} />
-        <TodoInput addTodo={addTodo} />
-        <TodoList
-          todos={todos}
-          handleSetCompleted={handleSetCompleted}
-          handleDeleteTodo={handleDeleteTodo}
-        />
-        
+    <div>
+    <div className=" font-inter text-gray-100 flex items-center justify-center py-20 px-5">
+    <div className="container flex flex-col max-w-xl">
+    <Title />
+    <p>Saldo disponible: {remainingSalary}</p>
+    <h1>Total gastado: {totalPrice}</h1>
+    <InputPrice setSalary={setSalary} />
+    <TodoInput addTodo={addTodo} />
+    <TodoList
+    todos={todos}
+    handleSetCompleted={handleSetCompleted}
+    handleDeleteTodo={handleDeleteTodo}
+    />
+    
       </div>
-    </div>
-  );
-}
+      </div>
+      </div>
+    );
+  }
 
 export default App;

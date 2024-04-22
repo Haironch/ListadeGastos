@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Todo = ({ todo,  handleSetCompleted, handleDeleteTodo }) => {
   const { id, title, completed, price, salary} = todo;
   return (
-    <div className="flex items-center justify-between p-4 bg-gray-700 border-b border-solid border-gray-600 ">
+    <div className="flex items-center justify-between p-4 bg-gray-700 border-b border-solid border-gray-600  ">
       <div className="flex items-center ">
         {" "}
         {completed ? (

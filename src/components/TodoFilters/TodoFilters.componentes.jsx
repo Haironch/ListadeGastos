@@ -6,6 +6,7 @@ const FilterContainer = ({ children }) => {
 
     justify-between p-4 bg-gray-700 
     sm:flex
+    
     ">
       {children}
     </div>
@@ -18,6 +19,7 @@ const ItemsLeftf = ({ total }) => {
 
 const FilterButtonContainer = ({ children }) => {
   return <div className=" 
+  
   text-lg
   justify-center
   sm:flex sm:items-center space-x-6">{children}</div>;
